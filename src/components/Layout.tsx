@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { Command } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
+import { StashPanel } from './StashPanel'
 import { Palette } from './Palette'
 import { usePaletteStore } from '../lib/store'
 
@@ -47,6 +48,7 @@ export function Layout() {
             >
               ⌘K
             </button>
+            <StashPanel />
             <ThemeToggle />
           </div>
         </div>

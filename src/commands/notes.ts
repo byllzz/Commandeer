@@ -2,20 +2,20 @@ import { StickyNote, Plus, Copy } from 'lucide-react'
 import type { Command, PaletteView } from '../lib/types'
 import { loadJSON, saveJSON } from '../lib/persist'
 
-interface Note {
+export interface Note {
   id: string
   text: string
   createdAt: number
 }
 
-const KEY = 'cmdk:notes'
+export const NOTES_KEY = 'cmdk:notes'
 
-function getNotes(): Note[] {
-  return loadJSON<Note[]>(KEY, [])
+export function getNotes(): Note[] {
+  return loadJSON<Note[]>(NOTES_KEY, [])
 }
 
-function saveNotes(notes: Note[]) {
-  saveJSON(KEY, notes)
+export function saveNotes(notes: Note[]) {
+  saveJSON(NOTES_KEY, notes)
 }
 
 export const notesView: PaletteView = {

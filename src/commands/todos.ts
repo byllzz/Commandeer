@@ -3,17 +3,17 @@ import type { Command, PaletteView } from '../lib/types'
 import { loadJSON, saveJSON } from '../lib/persist'
 import { fireConfetti } from '../lib/confetti'
 
-interface Todo {
+export interface Todo {
   id: string
   text: string
   done: boolean
   createdAt: number
 }
 
-const KEY = 'cmdk:todos'
+export const TODOS_KEY = 'cmdk:todos'
 
-const getTodos = () => loadJSON<Todo[]>(KEY, [])
-const saveTodos = (todos: Todo[]) => saveJSON(KEY, todos)
+export const getTodos = () => loadJSON<Todo[]>(TODOS_KEY, [])
+export const saveTodos = (todos: Todo[]) => saveJSON(TODOS_KEY, todos)
 
 export const todosView: PaletteView = {
   id: 'todos',
