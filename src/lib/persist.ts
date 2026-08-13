@@ -12,6 +12,6 @@ export function saveJSON<T>(key: string, value: T): void {
   try {
     localStorage.setItem(key, JSON.stringify(value))
   } catch {
-    // storage full or unavailable — fail silently, app still works in-memory
+    // storage full or unavailable - fail silently, app still works in-memory
   }
 }

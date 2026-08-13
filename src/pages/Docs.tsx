@@ -1,4 +1,4 @@
-import { Github, StickyNote, ListTodo, Palette as PaletteIcon, Calculator } from 'lucide-react'
+import { Github, StickyNote, ListTodo, Palette as PaletteIcon, Calculator, Archive } from 'lucide-react'
 
 const sections = [
   {
@@ -14,10 +14,16 @@ const sections = [
       'Open "Todos", type a task, press Enter to add it. Selecting an open task marks it complete; selecting a completed task removes it. Clearing the last open task fires a small confetti celebration.',
   },
   {
+    title: 'Stash',
+    icon: Archive,
+    body:
+      'Click "Stash" in the header to open every saved Note and Todo in one popup, without going through the palette. It reads and writes the same localStorage keys the palette commands use, so both stay perfectly in sync. Copy or delete notes, and toggle or delete todos, directly from here.',
+  },
+  {
     title: 'Theme',
     icon: PaletteIcon,
     body:
-      'Switch between Dark, Light, and System from "Change Theme" in the palette, or the toggle in the header. The choice is saved and applied on every page load, including before first paint.',
+      'Switch between Dark, Light, and System from "Change Theme" in the palette, or the toggle in the header. Defaults to Light on first visit. The choice is saved and applied on every page load, including before first paint.',
   },
   {
     title: 'GitHub Search',

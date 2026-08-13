@@ -7,7 +7,7 @@
   --color-panel: 23 23 27;
   --color-border: 39 39 44;
 
-  /* Text scale — brightest to dimmest. Every text/icon color in the app
+  /* Text scale - brightest to dimmest. Every text/icon color in the app
      should reference one of these instead of a hardcoded zinc-* shade, or
      it won't respond when the theme is toggled. */
   --fg-100: 244 244 245;
@@ -49,4 +49,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
 }

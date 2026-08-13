@@ -19,7 +19,7 @@ const ROOT_VIEW: PaletteView = {
 }
 
 export function Palette() {
-  const { open, setOpen, toggle, input, setInput, recents, addRecent, viewStack, pushView, popView, showToast } =
+  const { open, setOpen, toggle, input, setInput, recents, addRecent, viewStack, pushView, popView, showToast, highlightId, clearHighlight } =
     usePaletteStore()
   const [activeIndex, setActiveIndex] = useState(0)
   const [githubResults, setGithubResults] = useState<Command[]>([])
@@ -82,6 +82,19 @@ export function Palette() {
   }, [results, showingRecents, recentIdSet])
 
   const flatList = useMemo(() => grouped.flatMap(([, cmds]) => cmds), [grouped])
+
+  // When something outside the palette (e.g. the Commands page) requests a
+  // specific command be highlighted, select it in the list once it's
+  // actually present, then clear the request so it doesn't linger on the
+  // next unrelated open.
+  useEffect(() => {
+    if (!open || !highlightId) return
+    const idx = flatList.findIndex((c) => c.id === highlightId)
+    if (idx !== -1) {
+      setActiveIndex(idx)
+      clearHighlight()
+    }
+  }, [open, highlightId, flatList, clearHighlight])
 
   function close() {
     setOpen(false)
@@ -177,7 +190,7 @@ export function Palette() {
 
               {showingRecents && (
                 <div className="px-4 pt-2 text-[10px] uppercase tracking-wide text-fg-600">
-                  Recent commands first — everything else is listed below
+                  Recent commands first - everything else is listed below
                 </div>
               )}
 

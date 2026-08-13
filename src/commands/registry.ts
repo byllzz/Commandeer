@@ -8,11 +8,6 @@ import { linkCommands, copyUrlCommand } from './links'
 import { funCommands } from './fun'
 import { helpCommand } from './help'
 
-/**
- * Central command registry. Feature modules register commands here so new
- * capabilities can be added (or removed) without touching the Palette UI —
- * this is the seam you'd use to load commands from a plugin/config source.
- */
 const registry = new Map<string, Command>()
 
 export function registerCommand(command: Command) {

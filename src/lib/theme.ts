@@ -3,7 +3,7 @@ export type Theme = 'dark' | 'light' | 'system'
 const KEY = 'cmdk:theme'
 
 export function getStoredTheme(): Theme {
-  return (localStorage.getItem(KEY) as Theme) || 'system'
+  return (localStorage.getItem(KEY) as Theme) || 'light'
 }
 
 export function applyTheme(theme: Theme) {

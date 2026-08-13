@@ -6,10 +6,6 @@ import { usePaletteStore } from '../lib/store'
 
 type Tab = 'notes' | 'todos'
 
-/** Header button + popup that surfaces everything saved from the palette
- * (notes, todos) in one place — so people don't have to remember they're
- * stashed behind ⌘K. Reads/writes the exact same localStorage the palette
- * commands use, so both stay in sync. */
 export function StashPanel() {
   const [open, setOpen] = useState(false)
   const [tab, setTab] = useState<Tab>('notes')
@@ -131,7 +127,7 @@ export function StashPanel() {
             {tab === 'notes' &&
               (notes.length === 0 ? (
                 <p className="px-4 py-8 text-center text-sm text-fg-600">
-                  No notes yet — save one from ⌘K.
+                  No notes yet - save one from ⌘K.
                 </p>
               ) : (
                 <ul>
@@ -170,7 +166,7 @@ export function StashPanel() {
             {tab === 'todos' &&
               (todos.length === 0 ? (
                 <p className="px-4 py-8 text-center text-sm text-fg-600">
-                  Nothing here yet — add a task from ⌘K.
+                  Nothing here yet - add a task from ⌘K.
                 </p>
               ) : (
                 <ul>

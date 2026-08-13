@@ -2,15 +2,9 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { Command } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 import { StashPanel } from './StashPanel'
+import { BottomNav } from './BottomNav'
 import { Palette } from './Palette'
 import { usePaletteStore } from '../lib/store'
-
-const navLinks = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/docs', label: 'Docs' },
-  { to: '/help', label: 'Help' },
-  { to: '/about', label: 'About' },
-]
 
 export function Layout() {
   const toggle = usePaletteStore((s) => s.toggle)
@@ -24,23 +18,6 @@ export function Layout() {
             Commandeer
           </NavLink>
 
-          <nav className="hidden sm:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.end}
-                className={({ isActive }) =>
-                  `text-xs px-3 py-1.5 rounded-lg transition ${
-                    isActive ? 'text-fg-100 bg-panel border border-border' : 'text-fg-500 hover:text-fg-300'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </nav>
-
           <div className="flex items-center gap-2">
             <button
               onClick={toggle}
@@ -52,29 +29,13 @@ export function Layout() {
             <ThemeToggle />
           </div>
         </div>
-
-        <nav className="sm:hidden flex items-center gap-1 px-4 pb-2 overflow-x-auto">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) =>
-                `text-xs px-3 py-1.5 rounded-lg transition shrink-0 ${
-                  isActive ? 'text-fg-100 bg-panel border border-border' : 'text-fg-500 hover:text-fg-300'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 pb-24">
         <Outlet />
       </main>
 
+      <BottomNav />
       <Palette />
     </div>
   )

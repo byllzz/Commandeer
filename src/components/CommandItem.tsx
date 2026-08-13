@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { ChevronRight } from 'lucide-react'
 import type { Command } from '../lib/types'
 
@@ -11,9 +12,15 @@ interface Props {
 
 export function CommandItem({ command, active, preview, onSelect, onHover }: Props) {
   const Icon = command.icon ?? ChevronRight
+  const ref = useRef<HTMLLIElement>(null)
+
+  useEffect(() => {
+    if (active) ref.current?.scrollIntoView({ block: 'nearest' })
+  }, [active])
 
   return (
     <li
+      ref={ref}
       role="option"
       aria-selected={active}
       onMouseEnter={onHover}

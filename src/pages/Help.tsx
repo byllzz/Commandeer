@@ -17,7 +17,7 @@ const inlineSyntax = [
 const faqs = [
   {
     q: 'Why do I only see a few commands when I open the palette?',
-    a: 'With an empty search box, your most recently used commands are pinned to the top under "Recent" — but the full command list is always right below it. Nothing is hidden; start typing to fuzzy-search everything, or just scroll.',
+    a: 'With an empty search box, your most recently used commands are pinned to the top under "Recent" - but the full command list is always right below it. Nothing is hidden; start typing to fuzzy-search everything, or just scroll.',
   },
   {
     q: 'Where is my data stored?',
@@ -25,7 +25,11 @@ const faqs = [
   },
   {
     q: 'Does the theme apply everywhere?',
-    a: 'Yes — the theme is applied at the document root, so it covers every page, not just the palette popup.',
+    a: 'Yes - the theme is applied at the document root, so it covers every page, not just the palette popup. It defaults to Light on first visit.',
+  },
+  {
+    q: "What's the difference between the palette's Notes/Todos and Stash?",
+    a: 'None, functionally - Stash (the button in the header) just shows the same saved notes and todos in a quick popup, without opening the full palette first. They read and write the same data.',
   },
 ]
 

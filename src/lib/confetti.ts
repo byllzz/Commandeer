@@ -1,4 +1,4 @@
-/** Lightweight canvas confetti burst — no dependency needed. */
+/** Lightweight canvas confetti burst - no dependency needed. */
 export function fireConfetti() {
   const canvas = document.createElement('canvas')
   canvas.style.position = 'fixed'

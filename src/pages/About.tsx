@@ -4,8 +4,8 @@ export default function About() {
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold">About this project</h1>
         <p className="text-sm text-fg-500">
-          A portfolio piece exploring keyboard-first UX — the kind of interaction pattern used by
-          Raycast, Linear, and Spotlight — built as a standalone web app rather than a feature
+          A portfolio piece exploring keyboard-first UX - the kind of interaction pattern used by
+          Raycast, Linear, and Spotlight - built as a standalone web app rather than a feature
           bolted onto something bigger.
         </p>
       </div>
@@ -26,7 +26,7 @@ export default function About() {
           <li>A plugin-style command registry that features register into independently</li>
           <li>Local persistence done carefully (notes, todos, recents, theme)</li>
           <li>A live external API integration (GitHub search) alongside purely local commands</li>
-          <li>Accessible markup — combobox/listbox/option roles, keyboard-only operability</li>
+          <li>Accessible markup - combobox/listbox/option roles, keyboard-only operability</li>
         </ul>
       </div>
     </div>
