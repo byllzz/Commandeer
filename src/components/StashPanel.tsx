@@ -104,7 +104,7 @@ export function StashPanel() {
             <button
               onClick={() => setTab('notes')}
               className={`flex-1 flex items-center justify-center gap-1.5 text-xs px-3 py-2.5 transition ${
-                tab === 'notes' ? 'text-fg-100 bg-white/5' : 'text-fg-500 hover:text-fg-300'
+                tab === 'notes' ? 'text-fg-100 bg-fg-100/5' : 'text-fg-500 hover:text-fg-300'
               }`}
             >
               <StickyNote size={13} />
@@ -114,7 +114,7 @@ export function StashPanel() {
             <button
               onClick={() => setTab('todos')}
               className={`flex-1 flex items-center justify-center gap-1.5 text-xs px-3 py-2.5 transition border-l border-border ${
-                tab === 'todos' ? 'text-fg-100 bg-white/5' : 'text-fg-500 hover:text-fg-300'
+                tab === 'todos' ? 'text-fg-100 bg-fg-100/5' : 'text-fg-500 hover:text-fg-300'
               }`}
             >
               <ListTodo size={13} />
@@ -134,7 +134,7 @@ export function StashPanel() {
                   {notes.map((note) => (
                     <li
                       key={note.id}
-                      className="flex items-start gap-2 px-3 py-2.5 border-b border-border last:border-0 hover:bg-white/5 transition group"
+                      className="flex items-start gap-2 px-3 py-2.5 border-b border-border last:border-0 hover:bg-fg-100/5 transition group"
                     >
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-fg-200 break-words">{note.text}</p>
@@ -146,14 +146,14 @@ export function StashPanel() {
                         <button
                           onClick={() => copyNote(note.text)}
                           aria-label="Copy note"
-                          className="p-1.5 rounded text-fg-500 hover:text-fg-200 hover:bg-white/10 transition"
+                          className="p-1.5 rounded text-fg-500 hover:text-fg-200 hover:bg-fg-100/10 transition"
                         >
                           <Copy size={13} />
                         </button>
                         <button
                           onClick={() => deleteNote(note.id)}
                           aria-label="Delete note"
-                          className="p-1.5 rounded text-fg-500 hover:text-red-400 hover:bg-white/10 transition"
+                          className="p-1.5 rounded text-fg-500 hover:text-red-400 hover:bg-fg-100/10 transition"
                         >
                           <Trash2 size={13} />
                         </button>
@@ -173,7 +173,7 @@ export function StashPanel() {
                   {todos.map((todo) => (
                     <li
                       key={todo.id}
-                      className="flex items-center gap-2 px-3 py-2.5 border-b border-border last:border-0 hover:bg-white/5 transition group"
+                      className="flex items-center gap-2 px-3 py-2.5 border-b border-border last:border-0 hover:bg-fg-100/5 transition group"
                     >
                       <button
                         onClick={() => toggleTodo(todo.id)}
@@ -192,7 +192,7 @@ export function StashPanel() {
                       <button
                         onClick={() => deleteTodo(todo.id)}
                         aria-label="Delete task"
-                        className="shrink-0 p-1.5 rounded text-fg-500 hover:text-red-400 hover:bg-white/10 transition opacity-0 group-hover:opacity-100"
+                        className="shrink-0 p-1.5 rounded text-fg-500 hover:text-red-400 hover:bg-fg-100/10 transition opacity-0 group-hover:opacity-100"
                       >
                         <Trash2 size={13} />
                       </button>

@@ -80,7 +80,7 @@ export function ThemeToggle() {
                 aria-checked={active}
                 onClick={() => choose(opt.id)}
                 className={`w-full flex items-center gap-2 text-xs px-3 py-2 transition ${
-                  active ? 'text-fg-100 bg-accent/10' : 'text-fg-400 hover:text-fg-200 hover:bg-white/5'
+                  active ? 'text-fg-100 bg-accent/10' : 'text-fg-400 hover:text-fg-200 hover:bg-fg-100/5'
                 }`}
               >
                 <OptIcon size={14} className="shrink-0" />

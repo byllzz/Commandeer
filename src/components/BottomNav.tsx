@@ -9,7 +9,7 @@ const navLinks = [
   { to: '/about', label: 'About', icon: Info },
 ]
 
-/** Floating pill nav, fixed to the bottom-center of the viewport - the
+/** Floating pill nav, fixed to the bottom-center of the viewport — the
  * single home for page navigation so the header can stay focused on the
  * palette trigger, Stash, and theme controls. */
 export function BottomNav() {
@@ -25,7 +25,7 @@ export function BottomNav() {
           end={link.end}
           className={({ isActive }) =>
             `flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full transition whitespace-nowrap ${
-              isActive ? 'text-fg-100 bg-white/10' : 'text-fg-500 hover:text-fg-300'
+              isActive ? 'text-fg-100 bg-fg-100/10' : 'text-fg-500 hover:text-fg-300'
             }`
           }
         >

@@ -59,7 +59,7 @@ export default function Commands() {
                   <button
                     key={cmd.id}
                     onClick={() => openInPalette(cmd)}
-                    className="w-full flex items-center gap-3 px-3 py-2.5 text-left text-sm border-b border-border last:border-0 hover:bg-white/5 transition"
+                    className="w-full flex items-center gap-3 px-3 py-2.5 text-left text-sm border-b border-border last:border-0 hover:bg-fg-100/5 transition"
                   >
                     <Icon size={16} strokeWidth={2} className="shrink-0 text-fg-500" aria-hidden="true" />
                     <div className="flex flex-col min-w-0 flex-1">

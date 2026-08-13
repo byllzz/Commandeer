@@ -15,7 +15,7 @@ export default function Home() {
   const isMac = typeof navigator !== 'undefined' && /Mac/.test(navigator.platform)
 
   return (
-    <div className="min-h-[calc(100vh-57px)] flex flex-col items-center justify-center gap-8 text-center px-4">
+    <div className="min-h-[calc(100vh-57px)] relative bottom-5 flex flex-col items-center justify-center gap-8 text-center px-4">
       <div className="space-y-3">
         <h1 className="text-4xl font-semibold tracking-tight">Commandeer</h1>
         <p className="text-fg-500 max-w-md mx-auto">

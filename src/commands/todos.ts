@@ -19,13 +19,13 @@ export const todosView: PaletteView = {
   id: 'todos',
   title: 'Todos',
   placeholder: 'Type a task and press Enter to add…',
-  emptyLabel: 'Nothing on your list - add a task to get started.',
+  emptyLabel: 'Nothing on your list — add a task to get started.',
   getCommands: (input, { toast }) => {
     const todos = getTodos()
     const commands: Command[] = todos.map((todo) => ({
       id: `todo-${todo.id}`,
       title: todo.text,
-      subtitle: todo.done ? 'Done - press Enter to remove' : 'Press Enter to complete',
+      subtitle: todo.done ? 'Done — press Enter to remove' : 'Press Enter to complete',
       category: todo.done ? 'Completed' : 'Open',
       icon: todo.done ? Trash2 : Square,
       action: (ctx) => {

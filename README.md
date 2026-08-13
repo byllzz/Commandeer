@@ -24,12 +24,32 @@ in-app help view.
 
 Navigation between pages lives in a floating pill fixed to the bottom-center
 of the screen, on every page, so the header can stay focused on the palette
-trigger, your saved Notes/Todos (Stash), and the theme switcher.
+trigger, your saved Notes/Todos (Stash), reporting an issue, and the theme
+switcher.
 
 Theme defaults to **Light** on first visit and applies at the document root,
 so it's consistent across every page - not just inside the palette popup.
 The header toggle and the palette's own "Change Theme" command read/write
 the same value, and your choice is remembered for future visits.
+
+## PWA
+
+Commandeer is installable as a Progressive Web App:
+
+- A `manifest.webmanifest` with a full icon set (16px-512px, plus maskable
+  variants for Android's adaptive icons) so it looks right on any home
+  screen or app switcher.
+- A minimal service worker (`public/sw.js`) that caches the app shell for
+  offline use and instant repeat loads. It's network-first for page
+  navigations - a live deploy always wins over the cache when you're
+  online - and falls back to the cached shell only when offline.
+- iOS/Android home-screen metadata (`apple-mobile-web-app-*` tags, theme
+  color) so "Add to Home Screen" behaves like a standalone app rather than
+  opening a browser tab.
+
+To regenerate the icon set from `public/icon.svg` after changing the mark,
+any SVG-to-PNG tool works (the project used `sharp` one-off, not a runtime
+dependency) - just re-export the same size list in `public/manifest.webmanifest`.
 
 Note: this uses client-side routing (`react-router-dom`'s `BrowserRouter`).
 If you deploy the built app as static files, configure your host to rewrite
@@ -103,6 +123,8 @@ popup you can copy or delete notes, and toggle or delete todos directly.
 - `components/CommandItem.tsx` - a single result row
 - `components/StashPanel.tsx` - the header popup listing saved Notes/Todos
 - `components/BottomNav.tsx` - the floating page-navigation pill
+- `lib/repo.ts` - single source of truth for the repo URL, used by the
+  header's "Report Issue" link
 - `components/Toaster.tsx` - transient toast notifications
 
 ## Extending it

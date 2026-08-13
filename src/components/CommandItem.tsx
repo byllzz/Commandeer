@@ -26,7 +26,7 @@ export function CommandItem({ command, active, preview, onSelect, onHover }: Pro
       onMouseEnter={onHover}
       onClick={onSelect}
       className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-sm transition-colors ${
-        active ? 'bg-accent/20 text-white' : 'text-fg-300 hover:bg-white/5'
+        active ? 'bg-accent/20 text-fg-100' : 'text-fg-300 hover:bg-fg-100/5'
       }`}
     >
       <Icon size={16} strokeWidth={2} className="shrink-0 text-fg-500" aria-hidden="true" />

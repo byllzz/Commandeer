@@ -5,30 +5,31 @@
 :root {
   --color-base: 13 13 15;
   --color-panel: 23 23 27;
-  --color-border: 39 39 44;
+  --color-border: 50 50 56;
 
   /* Text scale - brightest to dimmest. Every text/icon color in the app
      should reference one of these instead of a hardcoded zinc-* shade, or
-     it won't respond when the theme is toggled. */
+     it won't respond when the theme is toggled. Tuned for WCAG AA contrast
+     against --color-base / --color-panel in both themes. */
   --fg-100: 244 244 245;
   --fg-200: 228 228 231;
   --fg-300: 212 212 216;
-  --fg-400: 161 161 170;
-  --fg-500: 113 113 122;
-  --fg-600: 82 82 91;
+  --fg-400: 170 170 180;
+  --fg-500: 140 140 152;
+  --fg-600: 108 108 120;
 }
 
 .light {
   --color-base: 247 247 248;
   --color-panel: 255 255 255;
-  --color-border: 228 228 231;
+  --color-border: 220 220 226;
 
   --fg-100: 24 24 27;
   --fg-200: 39 39 42;
   --fg-300: 63 63 70;
   --fg-400: 82 82 91;
-  --fg-500: 113 113 122;
-  --fg-600: 161 161 170;
+  --fg-500: 96 96 106;
+  --fg-600: 128 128 138;
 }
 
 * {
