@@ -170,6 +170,8 @@ If you enjoyed this project, consider giving it a ⭐ on GitHub. It helps others
 
 # License (MIT)
 
+This project is licensed under the MIT License.
+
 ```text
 MIT License
 
