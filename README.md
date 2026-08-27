@@ -5,6 +5,7 @@
   </a>
 </p>
 
+<!--Project title -->
 # Commandeer (⌘K web tool)
 
 A keyboard-first command palette app - notes, todos, quick utilities, live
